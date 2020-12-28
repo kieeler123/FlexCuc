@@ -1,0 +1,86 @@
+@charset "UTF-8";
+@media screen and (max-width:980px) {
+  #mainbanner{
+    width: 980px;
+    height: 100px;
+    float: left;
+    border: 0;
+    outline: 0
+  }
+  #mainbanner #header{
+    width: 30%;
+    float: left;
+    border: 0;
+    outline: 0;
+  }
+  #mainbanner #header #logo{
+    width: 100%;
+  }
+  #mainbanner #mainmenu{
+    background: url('../img/list.png');
+    background-position: left;
+    background-repeat: no-repeat;
+    width: 70%;
+    position: relative;
+    border: none;
+    float: right;
+    z-index: 1000;
+  }
+  #mainbanner #mainmenu ul{
+    width: 20%;
+    display: none;
+    float: right;
+    top: 100px;
+    position: absolute;
+    background-color: rgba(0, 0, 0, .4);
+  }
+  #mainmenu .menu li:nth-child(7){
+    border: 0;
+    outline: 0;
+  }
+  #mainmenu .menu li:last-child{
+    border: 0;
+    outline: 0;
+  }
+  section.mainsection1 .text{
+    width: 980px;
+    margin: 0 auto;
+  }
+  section.mainsection2 .vd{
+    width: 980px;
+  }
+  section.mainsection2 .vd .video{
+    width: 1960px;
+  }
+  section.mainsection2 .vd .video li{
+    width: 980px;
+  }
+  section.mainsection2 .vd .video li video#flexcuc{
+    width: 980px;
+  }
+  section.mainsection2 .vd .video li video#web{
+    width: 980px;
+  }
+  section.section2 .s2text{
+    width: 980px;
+  }
+  .article1{
+    width: 980px;
+  }
+  .article1 h1{
+    font-size: 32px;
+  }
+  .article h3{
+    font-size: 16px;
+  }
+  .live{
+    width: 980px;
+    height: 250px;
+  }
+  .live .items{
+    height: 200px;
+    margin-left: 45px;
+  }
+  .live .iems .box{
+    width: 100%;
+  }
