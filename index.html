@@ -1,0 +1,262 @@
+ <!DOCTYPE html>
+ <html lang="en">
+
+<head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, user-scalable=no">
+     <meta http-equiv="content-type" content="text/html; charset=euc-kr" />
+     <title>TITLE</title>
+     <meta name="description" content="DESCRIPTION">
+     <link rel="stylesheet" href="css/initial.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/media980.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+     <!--[if lt IE 9]>
+       <script src = "http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+     <![endif]-->
+     <script type="text/javascript">
+     if(matchMedia("screen and (min-width:980px)").matches){
+       function scrollShrink() {
+         window.addEventListener('scroll', function(e){
+             var distanceY = window.pageYOffset || document.documentElement.scrollTop,
+                 shrinkOn = 1000; // 기준점인 y 픽셀.
+
+             if (distanceY > shrinkOn) { // 줄어든 헤더 버전
+               $(".fix").css("width","45");
+                 $(".fix").css("height","45");
+                 $(".fix").css("background","#000000");
+                 $("#mainmenu>ul>li>a").css("color","#000000");
+                 $("#header>#logo").css("position","fixed");
+                 $("#header>#logo").css("width","30%");
+                 $("#mainmenu>ul").css("position","fixed");
+                 $("#mainmenu>ul").css("width","70%");
+                 $("#mainmenu>ul>li").css("margin","0");
+                 $("#mainmenu>ul").css("margin-top","-75px");
+                 $("#mainmenu>ul").css("margin-left","200px");
+             } else { // 평소 헤더 버전
+               $(".fix").css("width","80");
+               $(".fix").css("height","80");
+               $(".fix").css("background","#f5d76e");
+                 $("#mainmenu>ul>li>a").css("color","#ffffff");
+                 $("#header").css("border-bottom","1px solid #f1f1f1");
+                 $("#header>#logo").css("position","static");
+                 $("#header>#logo").css("width","100%");
+                 $("#mainmenu>ul").css("width","100%");
+                 $("#mainmenu>ul").css("position","static");
+                 $("#mainmenu>ul>li").css("margin","22px");
+                 $("#mainmenu>ul").css("margin-top","0");
+                 $("#mainmenu>ul").css("margin-left","0");
+             }
+         });
+       }
+     } else if(matchMedia("screen and (max-width:980px)").matches){
+       function scrollShrink() {
+         window.addEventListener('scroll', function(e){
+             var distanceY = window.pageYOffset || document.documentElement.scrollTop,
+                 shrinkOn = 1000; // 기준점인 y 픽셀.
+
+             if (distanceY > shrinkOn) { // 줄어든 헤더 버전
+               $(".fix").css("width","45");
+                 $(".fix").css("height","45");
+                 $(".fix").css("background","#000000");
+             } else { // 평소 헤더 버전
+               $(".fix").css("width","80");
+               $(".fix").css("height","80");
+               $(".fix").css("background","#f5d76e");
+             }
+         });
+       }
+       function toggle(){
+         $("#mainmenu>ul").animate({height:"toggle"});
+       }
+     }
+     function prev(){
+       $(".video").animate({left:"-100%"}, function(){
+         $(this).append($('.video li:eq(0)')). css({left:0})
+       })
+     }
+     function next(){
+       $(".video").animate({left:"100%"}, function(){
+         $(this).append($('.video li:eq(0)')). css({left:0})
+       })
+     }
+/*$(document).ready(function(){
+  $(window).scroll(function(){
+    var scroll = $(window).scrollTop();
+    if(scroll>1){
+      $('#mainmenu>ul>li>a').css("color", "#000000");
+    }else{
+      $('#mainmenu>ul>li>a').css("color", "#ffffff");
+    }
+  })
+})*/
+// setInterval(function() {
+
+//               var now = new Date();
+
+//               var date = now.getFullYear() + ". " +
+
+//                    (now.getMonth() + 1) + ". " +   now.getDate() + ". " +
+
+//                    now.getHours() + ":" + now.getMinutes() +
+
+//                    ":" + now.getSeconds();
+
+//               document.getElementById("date").innerHTML = date;
+
+//               }, 1000);
+//               setInterval(function() {
+
+//                             var now = new Date();
+
+//                             var day = (now.getFullYear() - 100) + ". " +
+
+//                                  (now.getMonth() - 1) + ". " +   now.getDate() + ". " +
+
+//                                  (now.getHours() - 10) + ":" + now.getMinutes() +
+
+//                                  ":" + now.getSeconds();
+
+//                             document.getElementById("day").innerHTML = day;
+
+//                             }, 1000);
+     </script>
+ </head>
+
+ <body onload="javascript:scrollShrink();">
+   <div class="fix">
+
+   </div>
+   <div id="mainbanner">
+     <header id="header">
+       <div id="logo"></div>
+     </header>
+     <div id="mainmenu" onclick="toggle()">
+      <ul class="menu">
+        <li><a href="#">flexcuc</a></li>
+        <li><a href="#">flexcuc</a></li>
+        <li><a href="#">flexcuc</a></li>
+        <li><a href="#">flexcuc</a></li>
+        <li><a href="#">flexcuc</a></li>
+        <li><a href="#">flexcuc</a></li>
+        <li><a href="#">flexcuc</a></li>
+        <li><a href="#">flexcuc</a></li>
+      </ul>
+    </div>
+   </div>
+   <section class="mainsection1">
+     <div class="text">
+       <div class="maintext"><h3>요리는 LOOK이다</h3></div>
+     </div>
+   </section>
+   <section class="mainsection2">
+     <div class="vd">
+       <ul class="video">
+         <li><video id="flexcuc" src="img/flexcuc.mp4" autoplay loop muted></video></li>
+         <li><video id="web" src="img/sample.mp4" autoplay loop muted></video></li>
+       </ul>
+       <button class="prev" onclick="prev()">
+         <img class="prev" src="img/select_box_arrow.png" alt="">
+       </button>
+       <button class="next" onclick="next()">
+         <img class="next" src="img/select_box_arrow.png" alt="">
+       </button>
+     </div>
+ </section>
+   <section class="section2">
+     <div class="s2text">
+       <p>FlexCuc은 강력한 SR모터 기반의 블레이드(날)와<br>
+       온도를 정밀하게 제어하는 인덕션 히팅(IH)기술이 융합된<br>
+     신개념 올인원 조리가전입니다.</p>
+     </div>
+   </section>
+   <div class="article1">
+     <div class="left">
+       <div class="arttext">
+         <h3>주방에 노동 대신 여유를</h3>
+         <h1>요리별 맞춤 온도 컨트롤</h1>
+           <p>이제 조리 중 불세기를 조절하고<br>
+           젓기를 반복하는 번거로움이 사라집니다.<br>
+         플렉스쿡이 요리별 최적의 온도와 시간을<br>
+       자동으로 조절해 오버쿠킹되거나 설익을 엄려 없이<br>
+     요리의 완성도를 높여줍니다.</p>
+       </div>
+       <div class="img1">
+         <img src="img/img1.png" alt="">
+       </div>
+       <div class="arttext">
+         <h3>초보자도 전문 셰프처럼</h3>
+         <h1>120개 레시피의 기적</h1>
+           <p>간단한 밑반찬부터 주말 저녁 고급진 글로벌 요리까지!<br>
+내장된 120개의 레시피가 풍요롭고 즐거운 식탁을 선사합니다.</p>
+       </div>
+       <div class="img2">
+         <img src="img/img2.png" alt="">
+       </div>
+     </div>
+     <div class="right">
+       <div class="img3">
+         <img src="img/img3.png" alt="">
+       </div>
+       <div class="arttext">
+         <h3>힘과 속도, 견고함이 만든</h3>
+         <h1>플렉스쿡만의 맞춤 식감</h1>
+           <p>강력한 힘과 스피드를 가진 SR모터와 만능 올인원 블레이드가<br>
+재료 종류에 상관없이 그 크기와 상태를 원하는대로 제어해줘<br>
+재료의 식감은 물론 음식의 디테일까지 살아납니다.</p>
+       </div>
+       <div class="img4">
+         <img src="img/img4.png" alt="">
+       </div>
+       <div class="arttext">
+         <h3>미니멀하고 심플한 주방</h3>
+         <h1>플렉스쿡 하나면 OK!</h1>
+           <p>재료 손질부터 조리까지,<br>
+요리를 위한 모든 것이 올인원 플렉스쿡 하나로 해결돼<br>
+경제적이고 주방은 깔끔해집니다..</p>
+       </div>
+     </div>
+   </div>
+   <div class="article2">
+     <div class="background">
+       <h1>"하는 요리에서 보는 요리로"<br>
+       변화될 당신의 일상을 만나보세요.</h1>
+     </div>
+   </div>
+   <div class="live">
+     <h1>Live</h1>
+       <div class="items">
+         <div class="box">
+           <img src="./img/galbee.jpg" width="100%" height="100%" alt="">
+         </div>
+       </div>
+       <div class="items">
+         <div class="box">
+           <img src="./img/yoree.jpg" width="100%" height="100%" alt="">
+         </div>
+       </div>
+       <div class="items">
+         <div class="box">
+           <img src="./img/gamjatang.jpg" width="100%" height="100%" alt="">
+         </div>
+       </div>
+   </div>
+   <div class="news">
+     <h1>News</h1>
+       <div class="items">
+         <p>쿠첸, 올인원 조리가전 브랜드 플렉스쿡(FlexCuc™) 공식 브랜드 사이트 오픈</p>
+         <p id="date">2020.11.02</p>
+       </div>
+       <div class="items">
+         <p>쿠첸, 올인원 조리가전 브랜드 플렉스쿡(FlexCuc™) 런칭</p>
+         <p id="date">2020.11.02</p>
+       </div>
+   </div>
+   <div class="event">
+     <div class="ev"></div>
+     <div class="ev"></div>
+   </div>
+ </body>
+
+ </html>
