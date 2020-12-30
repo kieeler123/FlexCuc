@@ -257,6 +257,7 @@ section.section2 .s2text p{
   margin: 0 auto;
   overflow: hidden;
   line-height: 80px;
+  position: relative;
 }
 .news h1{
   font-size: 36px;
@@ -294,4 +295,68 @@ section.section2 .s2text p{
 .ev:nth-of-type(2){
   background-image: url("../img/eventImg2.png");
   margin-left: 20px;
+}
+
+footer{
+  width: 100%;
+  height: 300px;
+  margin-top: 300px;
+  background-color: dimgray;
+}
+footer .footerTop{
+  padding: 20px;
+  border-bottom: 1px solid gray;
+}
+footer .footerTop .text{
+  width: 1190px;
+  margin: 0 auto;
+  text-align: right;
+}
+footer .footerTop h1{
+  font-size: 20px;
+  color: white;
+  font-weight: lighter;
+}
+footer .footerTop a{
+  color: orangered;
+}
+footer .footerTop h5{
+  margin-top: 10px;
+  color: white;
+  font-size: 12px;
+}
+footer .footerBottom{
+  width: 1190px;
+  padding: 40px 20px;
+  margin: 0 auto;
+}
+footer .footerBottom b{
+  color: white;
+}
+footer .footerBottom b:nth-of-type(2):before{
+  content: '';
+  display: inline-block;
+  width: 1px;
+  height: 12px;
+  background-color: grey;
+  position: relative;
+  left: -7px;
+}
+footer .footerBottom .textTop b:nth-of-type(3){
+  padding: 10px 20px;
+  border: 3px solid white;
+  border-radius: 30px;
+  float: right;
+}
+footer .footerBottom .textBottom b{
+  color: #333333;
+}
+footer b{padding: 5px; line-height: 20px;}
+footer .footerBottom .textBottom b:nth-of-type(2){
+  line-height: 60px;
+}
+footer .footerBottom .textBottom b:nth-of-type(3){
+  display: block;
+  position: relative;
+  top: -20px;
 }
